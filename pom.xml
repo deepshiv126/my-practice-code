@@ -21,7 +21,6 @@
 
   <modules>
     <module>practice-data-structure</module>
-    <module>practice-memcached</module>
   </modules>
 
   <properties>
