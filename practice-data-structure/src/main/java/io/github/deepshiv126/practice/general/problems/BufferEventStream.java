@@ -1,4 +1,4 @@
-package io.github.deepshiv126.practice.linear.data.structure.list.linkedlist.problems;
+package io.github.deepshiv126.practice.general.problems;
 
 import java.io.*;
 import java.util.PriorityQueue;

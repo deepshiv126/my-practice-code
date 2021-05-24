@@ -1,6 +1,6 @@
-package io.github.deepshiv126.practice.linear.data.structure.string.problems;
+package io.github.deepshiv126.practice.general.problems;
 
-import io.github.deepshiv126.practice.linear.data.structure.list.linkedlist.problems.ReOrderDataInLogFiles;
+import io.github.deepshiv126.practice.general.problems.ReOrderDataInLogFiles;
 import org.testng.annotations.Test;
 
 public class ReOrderDataInLogFilesTest {
