@@ -1,13 +1,18 @@
 version: 2.1
 jobs:
-  initial-test-job:
+  build-and-test:
+    # Using CircleCI Docker for convenience: https://circleci.com/developer/images/image/cimg/openjdk
     docker:
-      - image: alpine:3.7
+      - image: cimg/openjdk:8.0
     steps:
+      - checkout
       - run:
-          name: run-sanity-test
-          command: uname -a
+          name: Build
+          command: mvn -B -DskipTests clean package
+      - run:
+          name: Test
+          command: mvn test
 workflows:
   initial-work-flow:
     jobs:
-      - initial-test-job
+      - build-and-test
