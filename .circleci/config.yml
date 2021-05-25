@@ -1,0 +1,13 @@
+version: 2.1
+jobs:
+  initial-test-job:
+    docker:
+      - image: alpine:3.7
+    steps:
+      - run:
+          name: run-sanity-test
+          command: uname -a
+workflows:
+  initial-work-flow:
+    jobs:
+      - initial-test-job
