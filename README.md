@@ -1,4 +1,4 @@
-[![deepshiv126](https://circleci.com/gh/deepshiv126/my-practice-code.svg?style=svg&circle-token=bd4f53a284e546b4d08daea6a0e0845c1ad63598)](https://app.circleci.com/pipelines/github/deepshiv126/my-practice-code?branch=master)
+[![deepshiv126](https://circleci.com/gh/deepshiv126/my-practice-code.svg?style=shield&circle-token=bd4f53a284e546b4d08daea6a0e0845c1ad63598)](https://app.circleci.com/pipelines/github/deepshiv126/my-practice-code?branch=master)
 
 # my-practice-code
 
