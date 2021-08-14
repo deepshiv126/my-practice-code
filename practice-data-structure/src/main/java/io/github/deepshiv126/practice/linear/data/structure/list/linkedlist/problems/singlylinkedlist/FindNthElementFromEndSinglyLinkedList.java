@@ -7,7 +7,7 @@ package io.github.deepshiv126.practice.linear.data.structure.list.linkedlist.pro
  * move first pointer my nth position,
  * then move first and second pointers together,
  * till first pointer reach end.
- *
+ * <p>
  * Now, second pointer will be at nth position
  * from end of list.
  *

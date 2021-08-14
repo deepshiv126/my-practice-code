@@ -16,17 +16,6 @@ public class InsertNodeIntoSortSinglyLinkedList {
         this.currentSize = 0;
     }
 
-    // definition of node.
-    private static class Node {
-        int element;
-        Node next;
-
-        public Node(final int element) {
-            this.element = element;
-            this.next = null;
-        }
-    }
-
     // addNode in Sorted List
     public boolean add(final int element) {
         Node newNode = new Node(element);
@@ -57,13 +46,23 @@ public class InsertNodeIntoSortSinglyLinkedList {
         return true;
     }
 
-
     // visual understaning
     public void printElements() {
         Node tmpNode = this.head;
         while (tmpNode != null) {
             //System.out.print(tmpNode.element + " --> ");
             tmpNode = tmpNode.next;
+        }
+    }
+
+    // definition of node.
+    private static class Node {
+        int element;
+        Node next;
+
+        public Node(final int element) {
+            this.element = element;
+            this.next = null;
         }
     }
 }

@@ -3,8 +3,6 @@ package io.github.deepshiv126.practice.linear.data.structure.stack;
 import io.github.deepshiv126.practice.data.structure.stack.StackInterface;
 import io.github.deepshiv126.practice.linear.data.structure.list.arrays.DynamicArray;
 
-import java.util.Stack;
-
 /**
  * Stack - Last in First Out
  * <p>

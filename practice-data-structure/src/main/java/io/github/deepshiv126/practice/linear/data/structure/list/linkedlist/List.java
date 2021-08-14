@@ -74,6 +74,7 @@ public interface List<E> {
      * @return
      */
     E removeAtPosition(int position);
+
     /**
      * Remove given element in the list.
      *
@@ -106,6 +107,7 @@ public interface List<E> {
 
     /**
      * Get the last element in the list.
+     *
      * @return
      */
     E peekLastWithTail();

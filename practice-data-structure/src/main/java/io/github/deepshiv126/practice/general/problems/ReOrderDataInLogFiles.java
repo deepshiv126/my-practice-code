@@ -5,25 +5,24 @@ import java.util.Arrays;
 
 /**
  * Reorder Data in Log Files
- *
+ * <p>
  * Rules -
  * 1. Log can be 2 type - Letter Log and Digit Log
  * 2. First part of Log - unique identifier and Rest part of log - actual logs
  * 3. Unique Identifiers - can be a-z and 0-9
  * 4. Rules
- *        1. Letter Logs always comes before digit logs -- eg. "let3 leet code" "let2 1 12 13"
- *        2. Letter Logs sorted lexico-graphically and not including id. -- eg. "let3 art zero" "let2 own kit dog"
- *        3. When Letter log are equals, sort by id lexico-graphically eg. "let2 leet code" "let2 leet code"
- *        4. Digit logs should maintain thier order  -- eg. "let3 leet code" "let2 1 12 13" "let1 9 12 10"
- *
- *  Solution
- *  1. Split String by Space and first String is Unique Identifier
- *  2. Second String - very first character says letter log or digit log.
- *
- *  Complexity
- *      Time : O(n*log(n)) - Array Sort using QuickSort
- *      Space : O(log(n))
- *
+ * 1. Letter Logs always comes before digit logs -- eg. "let3 leet code" "let2 1 12 13"
+ * 2. Letter Logs sorted lexico-graphically and not including id. -- eg. "let3 art zero" "let2 own kit dog"
+ * 3. When Letter log are equals, sort by id lexico-graphically eg. "let2 leet code" "let2 leet code"
+ * 4. Digit logs should maintain thier order  -- eg. "let3 leet code" "let2 1 12 13" "let1 9 12 10"
+ * <p>
+ * Solution
+ * 1. Split String by Space and first String is Unique Identifier
+ * 2. Second String - very first character says letter log or digit log.
+ * <p>
+ * Complexity
+ * Time : O(n*log(n)) - Array Sort using QuickSort
+ * Space : O(log(n))
  */
 public class ReOrderDataInLogFiles {
 
@@ -38,11 +37,11 @@ public class ReOrderDataInLogFiles {
             // get the string from 0 to space -- this will be first letter.
             String secondStringUniqueIdentifier = secondString.substring(0, secondStringSpaceIndex);
             // get the character as string after space -- this is to identify whether its letterlog or digitlog
-            String secondStringLogData = secondString.substring(secondStringSpaceIndex+1);
+            String secondStringLogData = secondString.substring(secondStringSpaceIndex + 1);
 
             int firstStringSpaceIndex = firstString.indexOf(" ");
             String firstStringUniqueIdentifier = firstString.substring(0, firstStringSpaceIndex);
-            String firstStringLogData = firstString.substring(firstStringSpaceIndex+1);
+            String firstStringLogData = firstString.substring(firstStringSpaceIndex + 1);
 
             //identify whether its letterlog or digitlog
             boolean isSecondStringADigitLog = Character.isDigit(secondStringLogData.charAt(0));
@@ -52,11 +51,11 @@ public class ReOrderDataInLogFiles {
             // check if they are same or not,
             // if same,
             // then check unique identifier
-            if(!isSecondStringADigitLog && !isFirstStringADigitLog) {
+            if (!isSecondStringADigitLog && !isFirstStringADigitLog) {
                 // check if both letter log are same or not
                 int value = secondStringLogData.compareTo(firstStringLogData);
                 // if its same, then compare to unique id
-                if(value == 0 ) return secondStringUniqueIdentifier.compareTo(firstStringUniqueIdentifier);
+                if (value == 0) return secondStringUniqueIdentifier.compareTo(firstStringUniqueIdentifier);
                 return value;
             }
             // if either one is digit log or both should be digit log.
@@ -66,12 +65,11 @@ public class ReOrderDataInLogFiles {
 
 
             // explaining if conditions
-            if(isSecondStringADigitLog) {
-                if(isFirstStringADigitLog) {
+            if (isSecondStringADigitLog) {
+                if (isFirstStringADigitLog) {
                     // if first string is digit log - leave it
                     // 0
-                }
-                else {
+                } else {
                     // else first string is letter log -- still good first is letter and second is digit
                     // 1
                 }
@@ -83,11 +81,11 @@ public class ReOrderDataInLogFiles {
             // same as above if condition, but used ternary condition.
             return isSecondStringADigitLog ? (isFirstStringADigitLog ? 0 : 1) : -1;
         });
-        return  logs;
+        return logs;
     }
 
     public String[] understanding(String[] logs) {
-        int i=0;
+        int i = 0;
         Arrays.sort(logs, (log1, log2) -> {
             int value = log1.compareTo(log2);
             //System.out.println(log1+":"+log2+"="+value);

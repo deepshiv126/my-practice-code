@@ -1,7 +1,5 @@
 package io.github.deepshiv126.practice.linear.data.structure.list.linkedlist;
 
-import io.github.deepshiv126.practice.linear.data.structure.list.linkedlist.List;
-
 /**
  * Singly Linked List is a linear data structure used for storing collections of nodes.
  * - It contains sequence of node
@@ -11,31 +9,10 @@ import io.github.deepshiv126.practice.linear.data.structure.list.linkedlist.List
  */
 public class SinglyLinkedList<E> implements List<E> {
 
-    /**
-     * Node is most basic and primitive component of linked list.
-     * Node holds element data and reference to next Node.
-     * <p>
-     * Node is intentionally made private class,
-     * so its not reachable outside or not able to modify.
-     *
-     * @param <E>
-     */
-    private static class Node<E> {
-        private E element;
-        private Node<E> next;
-
-        public Node(final E element) {
-            this.element = element;
-            this.next = null;
-        }
-    }
-
     // Singly Linked List maintains head.
     private Node<E> head;
-
     // Singly Linked List gets better with tail pointer in addLast Ops.
     private Node<E> tail;
-
     // Maintain a current size of the list.
     private int currentSize;
 
@@ -210,7 +187,6 @@ public class SinglyLinkedList<E> implements List<E> {
 
         return true;
     }
-
 
     /**
      * Remove first element in the list.
@@ -452,9 +428,28 @@ public class SinglyLinkedList<E> implements List<E> {
     public void printAllElementsInList() {
         Node<E> currentNode = this.head;
         while (currentNode != null) {
-          //  System.out.print(currentNode.element + " --> ");
+            //  System.out.print(currentNode.element + " --> ");
             currentNode = currentNode.next;
         }
         //System.out.print(" null \n");
+    }
+
+    /**
+     * Node is most basic and primitive component of linked list.
+     * Node holds element data and reference to next Node.
+     * <p>
+     * Node is intentionally made private class,
+     * so its not reachable outside or not able to modify.
+     *
+     * @param <E>
+     */
+    private static class Node<E> {
+        private E element;
+        private Node<E> next;
+
+        public Node(final E element) {
+            this.element = element;
+            this.next = null;
+        }
     }
 }

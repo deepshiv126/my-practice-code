@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 public class SimpleQueueUsingSinglyLinkedListTest {
 
     @Test
-    public void queueTest(){
+    public void queueTest() {
         SimpleQueueUsingSinglyLinkedList<Integer> integerSimpleQueueUsingSinglyLinkedList = new SimpleQueueUsingSinglyLinkedList<>();
         integerSimpleQueueUsingSinglyLinkedList.enqueue(1);
         integerSimpleQueueUsingSinglyLinkedList.enqueue(2);

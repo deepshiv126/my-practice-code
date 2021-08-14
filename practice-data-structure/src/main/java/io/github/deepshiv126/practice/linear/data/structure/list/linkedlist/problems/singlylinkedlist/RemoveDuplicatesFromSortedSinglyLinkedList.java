@@ -2,7 +2,7 @@ package io.github.deepshiv126.practice.linear.data.structure.list.linkedlist.pro
 
 /**
  * Remove Duplicates from Sorted Singly Linked List.
- *
+ * <p>
  * Time Complexity is O(n)
  */
 public class RemoveDuplicatesFromSortedSinglyLinkedList<E> {
@@ -11,18 +11,6 @@ public class RemoveDuplicatesFromSortedSinglyLinkedList<E> {
     Node<E> head;
     Node<E> tail;
     int currentSize;
-
-
-    // definition of a node.
-    private static class Node<E> {
-        E element;
-        Node<E> next;
-
-        public Node(final E element) {
-            this.element = element;
-            this.next = null;
-        }
-    }
 
     // remove Duplicates.
     public boolean removeDuplicates() {
@@ -70,5 +58,16 @@ public class RemoveDuplicatesFromSortedSinglyLinkedList<E> {
             tmpNode = tmpNode.next;
         }
         //System.out.println(" null ");
+    }
+
+    // definition of a node.
+    private static class Node<E> {
+        E element;
+        Node<E> next;
+
+        public Node(final E element) {
+            this.element = element;
+            this.next = null;
+        }
     }
 }

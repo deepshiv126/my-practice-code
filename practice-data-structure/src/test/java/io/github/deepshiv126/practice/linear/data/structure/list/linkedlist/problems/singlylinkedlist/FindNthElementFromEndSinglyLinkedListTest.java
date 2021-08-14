@@ -11,6 +11,15 @@ import org.testng.annotations.Test;
  */
 public class FindNthElementFromEndSinglyLinkedListTest {
 
+    @DataProvider(name = "provideInvalidNInput")
+    public static Object[][] provideInvalidNInput() {
+        return new Object[][]{
+                {-1,},
+                {0,},
+                {100,},
+        };
+    }
+
     @Test
     public void findNthElementFromEnd() {
         // assert empty list.
@@ -30,16 +39,6 @@ public class FindNthElementFromEndSinglyLinkedListTest {
 
         // used addFirst, so list looks like 14 --> 13 --> 12 --> 11 --> 10 -->  null
         Assert.assertEquals(new Integer(11), singlyLinkedList.findNthElementFromEnd(2));
-    }
-
-
-    @DataProvider(name = "provideInvalidNInput")
-    public static Object[][] provideInvalidNInput() {
-        return new Object[][]{
-                {-1,},
-                {0,},
-                {100,},
-        };
     }
 
     @Test(dataProvider = "provideInvalidNInput", expectedExceptions = IllegalArgumentException.class)

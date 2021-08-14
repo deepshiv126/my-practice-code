@@ -1,10 +1,9 @@
 package io.github.deepshiv126.practice.linear.data.structure.list.linkedlist;
 
-import java.util.NoSuchElementException;
-
-import io.github.deepshiv126.practice.linear.data.structure.list.linkedlist.DoublyLinkedList;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import java.util.NoSuchElementException;
 
 /**
  * Test Doubly Linked List Class.
@@ -152,15 +151,15 @@ public class DoublyLinkedListTest {
     public void peekFirst() {
         DoublyLinkedList<Integer> integerDoublyLinkedList = new DoublyLinkedList<>();
         integerDoublyLinkedList.addLast(10);
-        Assert.assertEquals(new Integer(10),integerDoublyLinkedList.peekFirst());
+        Assert.assertEquals(new Integer(10), integerDoublyLinkedList.peekFirst());
 
         integerDoublyLinkedList.addLast(11);
         integerDoublyLinkedList.addLast(12);
         integerDoublyLinkedList.addLast(13);
         integerDoublyLinkedList.addLast(14);
 
-        Assert.assertEquals(new Integer(10),integerDoublyLinkedList.peekFirst());
-        Assert.assertNotEquals(new Integer(14),integerDoublyLinkedList.peekFirst());
+        Assert.assertEquals(new Integer(10), integerDoublyLinkedList.peekFirst());
+        Assert.assertNotEquals(new Integer(14), integerDoublyLinkedList.peekFirst());
     }
 
     @Test(expectedExceptions = {NoSuchElementException.class})
@@ -173,15 +172,15 @@ public class DoublyLinkedListTest {
     public void peekLast() {
         DoublyLinkedList<Integer> integerDoublyLinkedList = new DoublyLinkedList<>();
         integerDoublyLinkedList.addLast(10);
-        Assert.assertEquals(new Integer(10),integerDoublyLinkedList.peekLast());
+        Assert.assertEquals(new Integer(10), integerDoublyLinkedList.peekLast());
 
         integerDoublyLinkedList.addLast(11);
         integerDoublyLinkedList.addLast(12);
         integerDoublyLinkedList.addLast(13);
         integerDoublyLinkedList.addLast(14);
 
-        Assert.assertEquals(new Integer(14),integerDoublyLinkedList.peekLast());
-        Assert.assertNotEquals(new Integer(10),integerDoublyLinkedList.peekLast());
+        Assert.assertEquals(new Integer(14), integerDoublyLinkedList.peekLast());
+        Assert.assertNotEquals(new Integer(10), integerDoublyLinkedList.peekLast());
     }
 
 
