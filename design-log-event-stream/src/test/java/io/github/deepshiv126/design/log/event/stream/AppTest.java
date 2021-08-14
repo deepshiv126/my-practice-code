@@ -1,12 +1,11 @@
 package io.github.deepshiv126.design.log.event.stream;
 
-
 import io.github.deepshiv126.design.log.event.stream.service.BufferLogEventStream;
 import org.testng.annotations.Test;
 
 public class AppTest {
 
-    @Test
+    @Test(enabled = false)
     public void appTest() {
         final int windowSize = 300;
 
