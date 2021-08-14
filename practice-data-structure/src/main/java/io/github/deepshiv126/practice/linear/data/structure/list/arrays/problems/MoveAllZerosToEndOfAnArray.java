@@ -11,8 +11,9 @@ public class MoveAllZerosToEndOfAnArray {
      * - Move both pointer simultaneously, until zero is found.
      * - Then move non-zero following pointer and keep zero pointer fixed until next non-zero element is found.
      * - Then swap the position with zero pointer to non-zero pointer elements.
-     *
+     * <p>
      * Time Complexity - O(n).
+     *
      * @param inputArray
      * @return
      */

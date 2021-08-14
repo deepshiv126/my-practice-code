@@ -10,8 +10,9 @@ public class FindMinimumValueInArray {
      * start with first element,
      * keep checking if holding elements is less than position element,
      * if yes then switch other move position to next.
-     *
+     * <p>
      * Time Complexity = O(n).
+     *
      * @param inputArray
      * @return
      */
@@ -27,7 +28,7 @@ public class FindMinimumValueInArray {
 
     public void printArray(final int[] inputArray) {
         for (int i = 0; i < inputArray.length; i++) {
-           // System.out.print(inputArray[i] + " --> ");
+            // System.out.print(inputArray[i] + " --> ");
         }
         //System.out.println(" ::End");
     }

@@ -324,7 +324,7 @@ public class DoublyLinkedList<E> implements List<E> {
         //System.out.print("Backward :: ");
         tmpNode = this.tail;
         while (tmpNode != null) {
-           // System.out.print(tmpNode.element + "  -->  ");
+            // System.out.print(tmpNode.element + "  -->  ");
             tmpNode = tmpNode.previous;
         }
         //System.out.println("null");

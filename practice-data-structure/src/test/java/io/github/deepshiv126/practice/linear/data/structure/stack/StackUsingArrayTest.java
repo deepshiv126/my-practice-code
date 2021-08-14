@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 public class StackUsingArrayTest {
 
     @Test
-    public void testPoP(){
+    public void testPoP() {
         StackUsingArray<Integer> stackUsingSinglyLinkedList = new StackUsingArray();
         Assert.assertTrue(stackUsingSinglyLinkedList.isEmpty());
         Assert.assertEquals(0, stackUsingSinglyLinkedList.size());

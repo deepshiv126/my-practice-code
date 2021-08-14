@@ -1,6 +1,5 @@
 package io.github.deepshiv126.practice.linear.data.structure.list.arrays.problems;
 
-import io.github.deepshiv126.practice.linear.data.structure.list.arrays.problems.ReverseArray;
 import org.testng.annotations.Test;
 
 /**

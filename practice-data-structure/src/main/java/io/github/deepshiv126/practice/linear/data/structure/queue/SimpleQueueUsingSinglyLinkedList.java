@@ -1,9 +1,9 @@
 package io.github.deepshiv126.practice.linear.data.structure.queue;
 
+import io.github.deepshiv126.practice.data.structure.queue.Queue;
+
 import java.util.EmptyStackException;
 import java.util.NoSuchElementException;
-
-import io.github.deepshiv126.practice.data.structure.queue.Queue;
 
 /**
  * Queue -

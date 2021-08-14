@@ -72,7 +72,7 @@ public class ReverseSinglyLinkedList<E> {
             return;
 
         while (tmpNode != null) {
-           //System.out.print(tmpNode.element + " --> ");
+            //System.out.print(tmpNode.element + " --> ");
             tmpNode = tmpNode.next;
         }
         //System.out.println("null");

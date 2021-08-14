@@ -32,51 +32,6 @@ class LRUCache<K, V> {
 
     private int size;
 
-    private class Node {
-        private K key;
-        private V value;
-
-        private Node next, prev;
-
-        Node(final K key, final V value) {
-            this.key = key;
-            this.value = value;
-            this.next = this.prev = null;
-        }
-
-        public K getKey() {
-            return key;
-        }
-
-        public void setKey(K key) {
-            this.key = key;
-        }
-
-        public V getValue() {
-            return value;
-        }
-
-        public void setValue(V value) {
-            this.value = value;
-        }
-
-        public Node getNext() {
-            return next;
-        }
-
-        public void setNext(Node next) {
-            this.next = next;
-        }
-
-        public Node getPrev() {
-            return prev;
-        }
-
-        public void setPrev(Node prev) {
-            this.prev = prev;
-        }
-    }
-
     /**
      * Parameter Constructor
      *
@@ -141,6 +96,51 @@ class LRUCache<K, V> {
     // this is only for understanding.
     public void printAllElementForUnderstanding() {
         this.list.printAllElementForUnderstanding();
+    }
+
+    private class Node {
+        private K key;
+        private V value;
+
+        private Node next, prev;
+
+        Node(final K key, final V value) {
+            this.key = key;
+            this.value = value;
+            this.next = this.prev = null;
+        }
+
+        public K getKey() {
+            return key;
+        }
+
+        public void setKey(K key) {
+            this.key = key;
+        }
+
+        public V getValue() {
+            return value;
+        }
+
+        public void setValue(V value) {
+            this.value = value;
+        }
+
+        public Node getNext() {
+            return next;
+        }
+
+        public void setNext(Node next) {
+            this.next = next;
+        }
+
+        public Node getPrev() {
+            return prev;
+        }
+
+        public void setPrev(Node prev) {
+            this.prev = prev;
+        }
     }
 
     public class DoublyLinkedList {

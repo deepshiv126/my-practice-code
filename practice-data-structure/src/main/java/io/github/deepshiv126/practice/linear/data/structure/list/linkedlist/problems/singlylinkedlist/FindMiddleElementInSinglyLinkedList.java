@@ -2,13 +2,13 @@ package io.github.deepshiv126.practice.linear.data.structure.list.linkedlist.pro
 
 /**
  * Find the middle element in the singly linked list.
- *
- *  idea is maintain two pointer - slowPointer, fastPointer.
- *  slowPointer move 1 step forward.
- *  fastPointer move 2 step forward.
- *  so, when fastPointer reaches to end, slowPointer will be at middle of list.
- *
- *  Time Complexity is n/2 or O(n).
+ * <p>
+ * idea is maintain two pointer - slowPointer, fastPointer.
+ * slowPointer move 1 step forward.
+ * fastPointer move 2 step forward.
+ * so, when fastPointer reaches to end, slowPointer will be at middle of list.
+ * <p>
+ * Time Complexity is n/2 or O(n).
  */
 
 public class FindMiddleElementInSinglyLinkedList<E> {
@@ -40,7 +40,7 @@ public class FindMiddleElementInSinglyLinkedList<E> {
         Node<E> slowPointer = this.head;
         Node<E> fastPointer = this.head;
 
-      // so, when fastPointer reaches to end, slowPointer will be at middle of list.
+        // so, when fastPointer reaches to end, slowPointer will be at middle of list.
         while (fastPointer != null && fastPointer.next != null) {
             slowPointer = slowPointer.next;
             // if above while condition fastPointer.next is not checked for null,

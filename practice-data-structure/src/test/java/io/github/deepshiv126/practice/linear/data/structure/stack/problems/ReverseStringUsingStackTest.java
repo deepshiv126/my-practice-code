@@ -7,8 +7,8 @@ import org.testng.annotations.Test;
 public class ReverseStringUsingStackTest {
 
     @DataProvider
-    public Object[][] reverseStringDataProvider(){
-        return new Object[][] {
+    public Object[][] reverseStringDataProvider() {
+        return new Object[][]{
                 {"madam",},
                 {"kayak",}
         };

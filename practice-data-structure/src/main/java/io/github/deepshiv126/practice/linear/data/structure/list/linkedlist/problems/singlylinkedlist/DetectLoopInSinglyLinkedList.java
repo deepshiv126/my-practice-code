@@ -26,7 +26,7 @@ public class DetectLoopInSinglyLinkedList {
             slowPointer = slowPointer.next;
             if (slowPointer == fastPointer) {
                 //System.out.println("Beginning Element of Loop :" + this.startingElementOfLoop(slowPointer).element);
-               //System.out.println("Removed Loop :" + this.removeLoop(slowPointer));
+                //System.out.println("Removed Loop :" + this.removeLoop(slowPointer));
 
                 return true;
             }
@@ -46,7 +46,7 @@ public class DetectLoopInSinglyLinkedList {
 
     public boolean removeLoop(Node slowerPointer) {
         Node tmp = this.head;
-        while(tmp.next != slowerPointer.next) {
+        while (tmp.next != slowerPointer.next) {
             tmp = tmp.next;
             slowerPointer = slowerPointer.next;
         }
@@ -82,7 +82,7 @@ public class DetectLoopInSinglyLinkedList {
         // print the list before make it loop.
         Node tmp = this.head;
         while (tmp != null) {
-          //  System.out.print(tmp.element + "-->");
+            //  System.out.print(tmp.element + "-->");
             tmp = tmp.next;
         }
 

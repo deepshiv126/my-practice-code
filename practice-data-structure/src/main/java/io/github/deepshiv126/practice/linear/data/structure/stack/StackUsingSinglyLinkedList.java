@@ -6,39 +6,28 @@ import java.util.EmptyStackException;
 
 /**
  * Stack - Last In First Out
- *
- *  Best Linear data structure to use to implement Stack
- *         - Array
- *                 - addLast - O(1)
- *                 - removeLast - O(1)
- *         - Singly Linked List
- *                 - addFirst - O(1)
- *                 - removeFirst - O(1)
- *         - Doubly Linked List
- *                 - addLast - O(1)
- *                 - removeLast - O(1)
- *                 or
- *                 - addFirst - O(1)
- *                 - removeFirst - O(1)
- *         - Circular Singly Linked List
- *                 - addLast - O(1)
- *                 - removeLast - O(1)
-
+ * <p>
+ * Best Linear data structure to use to implement Stack
+ * - Array
+ * - addLast - O(1)
+ * - removeLast - O(1)
+ * - Singly Linked List
+ * - addFirst - O(1)
+ * - removeFirst - O(1)
+ * - Doubly Linked List
+ * - addLast - O(1)
+ * - removeLast - O(1)
+ * or
+ * - addFirst - O(1)
+ * - removeFirst - O(1)
+ * - Circular Singly Linked List
+ * - addLast - O(1)
+ * - removeLast - O(1)
  */
 public class StackUsingSinglyLinkedList<E> implements StackInterface<E> {
 
     private Node<E> top;
     private int currentSize;
-
-    private static class Node<E> {
-        E element;
-        Node<E> next;
-
-        public Node(final E element) {
-            this.element = element;
-            this.next = null;
-        }
-    }
 
     public StackUsingSinglyLinkedList() {
         this.top = null;
@@ -115,6 +104,16 @@ public class StackUsingSinglyLinkedList<E> implements StackInterface<E> {
             throw new EmptyStackException();
 
         return this.top.element;
+    }
+
+    private static class Node<E> {
+        E element;
+        Node<E> next;
+
+        public Node(final E element) {
+            this.element = element;
+            this.next = null;
+        }
     }
 
 }
