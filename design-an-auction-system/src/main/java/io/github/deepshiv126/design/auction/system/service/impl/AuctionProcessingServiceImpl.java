@@ -78,7 +78,7 @@ public class AuctionProcessingServiceImpl implements AuctionProcessingService {
         AUCTION_WINNERS_QUEUE.put(newAuctionItem.getId(), individualItemWinnersQueue);
         RUNNING_MAX_BID_AMOUNT_COUNTER_PER_AUCTION_ITEMS.put(newAuctionItem.getId(), Long.valueOf(Integer.MIN_VALUE));
         TIME_KEEPER.put(newAuctionItem.getId(), System.currentTimeMillis() + newAuctionItem.getTimeOfAuction() * 1000);
-        LOG.info("NEW AUCTION ITEM is added to the system. {}", buildLogMessage(newAuctionItem));
+        LOG.debug("NEW AUCTION ITEM is added to the system. {}", buildLogMessage(newAuctionItem));
     }
 
     /**
@@ -96,13 +96,13 @@ public class AuctionProcessingServiceImpl implements AuctionProcessingService {
         if (individualItemBiddersQueue.size() < 1) {
             // until 2 bidder in the system, there is no bidding war.
             individualItemBiddersQueue.add(bidderEntity);
-            LOG.info("NEW BID :  \"{}\"  bid on item  \"{}\"  for  \"${}\"  and current winning bid amount is  \"${}\".",
+            LOG.debug("NEW BID :  \"{}\"  bid on item  \"{}\"  for  \"${}\"  and current winning bid amount is  \"${}\".",
                     bidderEntity.getName(), bidderEntity.getItemName(),
                     bidderEntity.getStartingBid(), runningMaxBidAmountCounter);
         } else {
             // add new bidder to system first.
             individualItemBiddersQueue.add(bidderEntity);
-            LOG.info("NEW BID::  \"{}\"  bid on item  \"{}\"  for  \"${}\"  and current winning bid amount is  \"${}\".",
+            LOG.debug("NEW BID::  \"{}\"  bid on item  \"{}\"  for  \"${}\"  and current winning bid amount is  \"${}\".",
                     bidderEntity.getName(), bidderEntity.getItemName(),
                     bidderEntity.getStartingBid(), runningMaxBidAmountCounter);
 
@@ -149,11 +149,11 @@ public class AuctionProcessingServiceImpl implements AuctionProcessingService {
             individualItemBiddersQueue.add(bidderAtLosingAuction);
             //update running max value.
             runningLocalMaxBidAmountCounter = Math.max(runningLocalMaxBidAmountCounter, bidderAtLosingAuction.getStartingBid());
-            LOG.info(">>>>>{}", individualItemBiddersQueue.peek().toString());
+            LOG.debug(">>>>>{}", individualItemBiddersQueue.peek().toString());
             moveBidderReachedMaxToAnotherQueue(individualItemBiddersQueue, individualItemWinnersQueue);
 
 
-            LOG.info("UPDATED BID:: \"{}\"  updated bid on item  \"{}\"  for new bid amount  \"${}\"  and current winning bid amount is  \"${}\".",
+            LOG.debug("UPDATED BID:: \"{}\"  updated bid on item  \"{}\"  for new bid amount  \"${}\"  and current winning bid amount is  \"${}\".",
                     bidderAtLosingAuction.getName(), bidderAtLosingAuction.getItemName(),
                     bidderAtLosingAuction.getStartingBid(), runningLocalMaxBidAmountCounter);
         }
@@ -221,7 +221,7 @@ public class AuctionProcessingServiceImpl implements AuctionProcessingService {
         // declare winners
         auctionWinnersQueue.forEach(((bidderEntity, biddersWinningQueue) -> {
             AuctionEntity finalWinners = biddersWinningQueue.peek();
-            LOG.info("\"{}\"  WON the bid on item  \"{}\"  for  \"${}\"  and maximum winning bid amount was  \"${}\".",
+            LOG.debug("\"{}\"  WON the bid on item  \"{}\"  for  \"${}\"  and maximum winning bid amount was  \"${}\".",
                     finalWinners.getName(), finalWinners.getItemName(),
                     finalWinners.getStartingBid(), finalWinners.getStartingBid());
         }));
@@ -242,7 +242,7 @@ public class AuctionProcessingServiceImpl implements AuctionProcessingService {
             rateOfDataIngestion *= 1000;
             Thread.sleep(rateOfDataIngestion);
         } catch (InterruptedException e) {
-            LOG.info("Exception occurred while introducing the delay in Data ingestion - {}", e.getMessage());
+            LOG.debug("Exception occurred while introducing the delay in Data ingestion - {}", e.getMessage());
         }
     }
 
@@ -251,7 +251,7 @@ public class AuctionProcessingServiceImpl implements AuctionProcessingService {
      */
     private void schedulerToCleanUpExpiredAuctionItem() {
         Executors.newSingleThreadScheduledExecutor().scheduleAtFixedRate(() -> {
-            LOG.info("SCHEDULER:: Current Number of Items in Auction : {} ", TIME_KEEPER.size());
+            LOG.debug("SCHEDULER:: Current Number of Items in Auction : {} ", TIME_KEEPER.size());
             if (TIME_KEEPER.size() != 0) {
                 TIME_KEEPER.entrySet().forEach(e -> {
                     if (e.getValue() - System.currentTimeMillis() <= 0) {
@@ -262,14 +262,14 @@ public class AuctionProcessingServiceImpl implements AuctionProcessingService {
                         AUCTION_WINNERS_QUEUE.remove(e.getKey());
                         RUNNING_MAX_BID_AMOUNT_COUNTER_PER_AUCTION_ITEMS.remove(e.getKey());
                         TIME_KEEPER.remove(e.getKey());
-                        LOG.info("SCHEDULER:: Cleaned up Auction Item - {}", e.getKey());
+                        LOG.debug("SCHEDULER:: Cleaned up Auction Item - {}", e.getKey());
                     } else {
-                        LOG.info("SCHEDULER:: Item {} will expire in {} seconds", e.getKey(), (e.getValue() - System.currentTimeMillis()) / 1000);
+                        LOG.debug("SCHEDULER:: Item {} will expire in {} seconds", e.getKey(), (e.getValue() - System.currentTimeMillis()) / 1000);
                     }
                 });
             }
         }, 10, 10, TimeUnit.SECONDS);
-        LOG.info("SCHEDULER:: Initialized the Scheduler for Clean up process.");
+        LOG.debug("SCHEDULER:: Initialized the Scheduler for Clean up process.");
     }
 
     /**
