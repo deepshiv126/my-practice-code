@@ -14,7 +14,7 @@
     <name>design-an-auction-system</name>
 
     <properties>
-        <jackson.version>2.2.3</jackson.version>
+        <jackson.version>2.9.10.7</jackson.version>
     </properties>
 
     <dependencies>
