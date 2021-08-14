@@ -11,7 +11,6 @@ public class AppTest {
 
         final String inputFile = this.getClass().getResource("/test-input-file.log").getFile();
         final String outputFile = this.getClass().getResource("/test-output-file.log").getFile();
-        ;
 
         final int windowSize = 300;
 

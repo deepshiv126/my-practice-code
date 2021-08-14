@@ -52,5 +52,4 @@
 
 - Problems
     - [ReOrderDataInLogFiles](https://github.com/deepshiv126/my-practice-code/blob/feature/my-practice-data-structure-code/practice-data-structure/src/main/java/io/github/deepshiv126/practice/general/problems/ReOrderDataInLogFiles.java)
-    - [BufferEventStream](https://github.com/deepshiv126/my-practice-code/blob/feature/my-practice-data-structure-code/practice-data-structure/src/main/java/io/github/deepshiv126/practice/general/problems/BufferEventStream.java)
     - [LRU Cache using HashMap and DoublyLinkedList](https://github.com/deepshiv126/my-practice-code/blob/feature/my-practice-data-structure-code/practice-data-structure/src/main/java/io/github/deepshiv126/practice/general/problems/LRUCache.java)
